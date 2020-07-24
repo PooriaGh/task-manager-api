@@ -137,17 +137,4 @@ router.get('/users/:id/avatar', async (req, res) => {
   }
 });
 
-// router.get('/users/me/avatar', auth, (req, res) => {
-//   try {
-//     if (!req.user.avatar) {
-//       return res.status(404).send();
-//     }
-
-//     res.set('Content-Type', 'image/jpg');
-//     res.send(req.user.avatar);
-//   } catch (e) {
-//     res.status(500).send(e);
-//   }
-// });
-
 module.exports = router;

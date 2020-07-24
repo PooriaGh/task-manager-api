@@ -16,6 +16,9 @@ const taskSchema = new mongoose.Schema(
       required: true,
       ref: 'User',
     },
+    image: {
+      type: Buffer,
+    },
   },
   {
     timestamps: true,
@@ -27,6 +30,7 @@ taskSchema.methods.toJSON = function () {
   const taskObject = task.toObject();
 
   delete taskObject.__v;
+  delete taskObject.image;
 
   return taskObject;
 };
